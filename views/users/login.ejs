@@ -1,0 +1,43 @@
+<% layout("/layouts/boilarplate") %>
+
+<body>
+  <div class="row mt-3">
+    <h1 class="col-6 offset-3">sigin in wonderlust</h1>
+    <div class="col-6 offset-3">
+      <form action="/login" method="post" novalidate class="needs-validation">
+
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            id="username"
+            type="text"
+            name="username"
+            placeholder="enter username"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks Good !</div>
+          <div class="invalid-feedback">Please enter username</div>
+        </div>
+
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks Good !</div>
+          <div class="invalid-feedback">Please enter Password</div>
+        </div>
+
+        <button class="btn btn-success">Login</button>
+        <a class="ml-5 link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hove" href="/signup">I Dont Have Account</a>
+      </form>
+    </div>
+  </div>
+</body>
