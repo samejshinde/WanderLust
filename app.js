@@ -4,17 +4,17 @@ const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
-const ExpressError = require("../utils/ExpressError.js");
+const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
 const flash = require("connect-flash");
 
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const User = require("../models/User.js")
+const User = require("./models/User.js")
 
-const listingsRouter = require("../routes/listings.js");
-const reviewsRouter = require("../routes/reviews.js");
-const usersRouter = require("../routes/users.js");
+const listingsRouter = require("./routes/listings.js");
+const reviewsRouter = require("./routes/reviews.js");
+const usersRouter = require("./routes/users.js");
 
 app.set("view engine" , "ejs");
 app.set("views" , path.join(__dirname , "views")); 
