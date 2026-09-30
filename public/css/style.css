@@ -109,3 +109,235 @@ body {
     padding-right: 0;
     padding-left: 0;
 }
+
+
+
+/* ------------------------------------------------------------------------------- */
+ 
+
+ /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+                   Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background-color: #fff;
+      color: #212529;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ============================================================
+       NAVBAR (original Bootstrap classes replicated with plain CSS)
+       - .navbar
+       - .navbar-expand-md
+       - .bg-body-light
+       - .border-bottom
+       - .sticky-top
+       ============================================================ */
+    .navbar {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      /* bg-body-light  →  Bootstrap's body light background (usually #f8f9fa) */
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;   /* .border-bottom */
+    }
+
+    /* .sticky-top */
+    .navbar.sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+    }
+
+    /* .container-fluid */
+    .navbar .container-fluid {
+      display: flex;
+      flex-wrap: inherit;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-right: 0.75rem;
+      padding-left: 0.75rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    /* ============================================================
+       BRAND  (.navbar-brand)
+       ============================================================ */
+    .navbar-brand {
+      display: inline-block;
+      padding-top: 0.3125rem;
+      padding-bottom: 0.3125rem;
+      margin-right: 1rem;
+      font-size: 1.25rem;
+      line-height: inherit;
+      white-space: nowrap;
+      color: #212529;
+    }
+
+    .navbar-brand i {
+      font-size: 1.25rem;   /* matches original icon size */
+      vertical-align: middle;
+    }
+
+    /* ============================================================
+       TOGGLER  (.navbar-toggler)
+       Visible only below md (768px)
+       ============================================================ */
+    .navbar-toggler {
+      padding: 0.25rem 0.75rem;
+      font-size: 1.25rem;
+      line-height: 1;
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 0.375rem;
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.55);
+      transition: box-shadow 0.15s ease-in-out;
+    }
+
+    .navbar-toggler:hover {
+      text-decoration: none;
+    }
+
+    .navbar-toggler:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    /* Hamburger icon – built with SVG background (matches Bootstrap's toggler-icon) */
+    .navbar-toggler-icon {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+    }
+
+    /* ============================================================
+       COLLAPSE  (.collapse .navbar-collapse)
+       Below md: hidden by default, shown when .show is added via JS
+       At md and up: always visible (navbar-expand-md)
+       ============================================================ */
+    .navbar-collapse {
+      flex-basis: 100%;
+      flex-grow: 1;
+      align-items: center;
+    }
+
+    /* When collapsed (mobile) */
+    .navbar-collapse:not(.show) {
+      display: none;
+    }
+
+    .navbar-collapse.show {
+      display: block;
+    }
+
+    /* ============================================================
+       NAV  (.navbar-nav)
+       ============================================================ */
+    .navbar-nav {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+    }
+
+    .navbar-nav .nav-link {
+      display: block;
+      padding: 0.5rem 0;                 /* mobile vertical padding */
+      color: rgba(0, 0, 0, 0.65);
+      transition: color 0.15s ease-in-out;
+      background: none;
+      border: 0;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* ============================================================
+       RESPONSIVE BREAKPOINT  (md = 768px)  —  .navbar-expand-md
+       ============================================================ */
+    @media (min-width: 768px) {
+      .navbar-expand-md {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+
+      .navbar-expand-md .navbar-toggler {
+        display: none;
+      }
+
+      .navbar-expand-md .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+      }
+
+      .navbar-expand-md .navbar-nav {
+        flex-direction: row;
+      }
+
+      .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+      }
+
+      /* .ms-auto  →  push the right group to the far right on desktop */
+      .navbar-expand-md .navbar-nav.ms-auto {
+        margin-left: auto !important;
+      }
+    }
+
+    /* On mobile, .ms-auto should not push away — stack normally */
+    @media (max-width: 767.98px) {
+      .navbar-nav.ms-auto {
+        margin-left: 0 !important;
+        margin-top: 0.5rem;   /* small gap between the two nav groups */
+      }
+
+      .navbar-nav:not(.ms-auto) {
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    .navbar-mb{
+margin-bottom: 20rem;
+
+    }
+.navbar {
+transition: margin-bottom 0.5s ease;
+}
+.navbar-mb {
+margin-bottom: 10rem;
+}

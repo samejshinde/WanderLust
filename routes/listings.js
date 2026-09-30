@@ -16,6 +16,13 @@ router.get("/", wrapAsync(async (req, res) => {
     res.render("listings/index.ejs", { allListings });
 }));
 
+
+// My Route
+router.get("/my", isLoggedIn , wrapAsync(async (req, res) => {
+    let allListings = await Listing.find({});
+    res.render("listings/my.ejs", { allListings });
+}));
+
 // new
 router.get("/new", isLoggedIn , (req, res) => {
     res.render("listings/new.ejs"); 
@@ -72,5 +79,8 @@ router.delete("/:id", isLoggedIn , isOwner , wrapAsync(async (req, res) => {
     req.flash("success", "Listing Deleted");
     res.redirect("/listings");
 }));
+
+
+
 
 module.exports = router;

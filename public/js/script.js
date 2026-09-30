@@ -17,3 +17,16 @@
     }, false)
   })
 })()
+
+
+// -----------------------------------------------------------------------------------------
+
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbar = document.querySelector('.navbar');
+
+navbarToggler.addEventListener('click', () => {
+
+  navbar.classList.toggle("navbar-mb");
+
+  console.log("CLICKED");
+});
